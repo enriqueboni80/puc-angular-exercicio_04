@@ -1,0 +1,11 @@
+<mat-card-content style="text-align: center; margin-bottom: 70px;">
+    <app-movie-search></app-movie-search>
+</mat-card-content>
+<mat-card-content>
+    <div fxLayout="row wrap" fxLayoutAlign="start center">
+        <ng-container *ngFor='let movie of movies'>
+            <app-movie-item class="mat-card-live" fxFlex="0 1 calc(33.3% - 11px)" [movie]=movie [urlImgs]>
+            </app-movie-item>
+        </ng-container>
+    </div>
+</mat-card-content>
