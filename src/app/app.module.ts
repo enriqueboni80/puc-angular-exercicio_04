@@ -10,10 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MovieComponent } from './views/movie/movie.component';
 import { MovieItemComponent } from './views/movie/movie-item/movie-item.component';
-import { MovieSearchComponent } from './views/movie/movie-search/movie-search.component';
 
 
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +21,6 @@ import { HttpClientModule } from '@angular/common/http'
     AppComponent,
     MovieComponent,
     MovieItemComponent,
-    MovieSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http'
     FlexLayoutModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

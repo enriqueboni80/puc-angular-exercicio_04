@@ -1,9 +1,11 @@
 <mat-card-content style="text-align: center; margin-bottom: 70px;">
-    <app-movie-search></app-movie-search>
+    <label for="site-search">Search the site: </label>
+    <input [(ngModel)]="moviesFilter" (ngModelChange)="onMoviesFilter($event)" name="moviesFilter" type="text"
+        placeholder="Buscar filmes...">
 </mat-card-content>
 <mat-card-content>
     <div fxLayout="row wrap" fxLayoutAlign="start center">
-        <ng-container *ngFor='let movie of movies'>
+        <ng-container *ngFor='let movie of filteredMovies'>
             <app-movie-item class="mat-card-live" fxFlex="0 1 calc(33.3% - 11px)" [movie]=movie [urlImgs]>
             </app-movie-item>
         </ng-container>

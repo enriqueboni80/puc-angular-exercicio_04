@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from './../../services/movies.service'
-import { Movie } from './../../models/movie'
+import { IMovie, IMovieResults } from './../../models/movie'
 
 @Component({
   selector: 'app-movie',
@@ -9,7 +9,9 @@ import { Movie } from './../../models/movie'
 })
 export class MovieComponent implements OnInit {
 
-  movies: Movie[];
+  movies: IMovie[];
+  filteredMovies: IMovie[]
+  moviesFilter: string
 
   constructor(
     public movieService: MoviesService
@@ -21,8 +23,13 @@ export class MovieComponent implements OnInit {
 
   // Chama o serviço para obtém todos os Filmes
   getMovies() {
-    this.movieService.getMovies().subscribe((movies: Movie) => {
+    this.movieService.getMovies().subscribe((movies: IMovieResults) => {
       this.movies = movies.results;
+      this.filteredMovies = movies.results
     })
+  }
+
+  onMoviesFilter(valueFilter: string): void {
+    this.filteredMovies = this.movies.filter(movie => movie.title.toLowerCase().includes(valueFilter.toLowerCase()))
   }
 }
