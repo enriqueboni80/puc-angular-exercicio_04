@@ -20,12 +20,12 @@ export class MovieComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getMovies();
+    this.getPopularMovies();
   }
 
   // Chama o serviço para obtém todos os Filmes
-  getMovies() {
-    this.movieService.getMovies().subscribe((movies: IMovieResults) => {
+  getPopularMovies() {
+    this.movieService.getPopularMovies().subscribe((movies: IMovieResults) => {
       this.movies = movies.results;
       this.filteredMovies = movies.results
       /* this.moviesStore.setMovies(movies.results) */
@@ -35,4 +35,12 @@ export class MovieComponent implements OnInit {
   onMoviesFilter(valueFilter: string): void {
     this.filteredMovies = this.movies.filter(movie => movie.title.toLowerCase().includes(valueFilter.toLowerCase()))
   }
+
+  onOrderBy(orderField: string): void {
+    console.log(this.filteredMovies);
+    this.filteredMovies.sort((a, b) => {
+      return b[orderField] - a[orderField]
+    })
+  }
+
 }

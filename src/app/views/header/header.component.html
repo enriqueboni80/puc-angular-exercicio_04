@@ -1,1 +1,13 @@
-<p>header works!</p>
+<mat-card-content style="text-align: center; margin-bottom: 70px;">
+    <mat-form-field class="example-full-width" style="text-align:center">
+        <mat-label>Search Movie</mat-label>
+        <input matInput  [(ngModel)]="moviesFilter" (ngModelChange)="onMoviesFilter($event)" name="moviesFilter" type="text"
+        placeholder="...">
+    </mat-form-field>
+    <div>
+    <a href="#" (click)="onOrderBy('vote_count')">Order by votes</a>
+    </div>
+    <div>
+    <a href="#" (click)="onOrderBy('popularity')">Order by popularity</a>
+    </div>
+</mat-card-content>

@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -15,6 +17,7 @@ import { MovieItemComponent } from './views/movie/movie-item/movie-item.componen
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './views/header/header.component';
+import { MovieDetailComponent } from './views/movie/movie-detail/movie-detail.component';
 
 
 @NgModule({
@@ -23,11 +26,14 @@ import { HeaderComponent } from './views/header/header.component';
     MovieComponent,
     MovieItemComponent,
     HeaderComponent,
+    MovieDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
+    MatInputModule,
+    MatMenuModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
     HttpClientModule,

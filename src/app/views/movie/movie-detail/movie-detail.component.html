@@ -1,0 +1,14 @@
+<div style="justify-content:center; display:flex">
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ movieDetail.title }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="'https://image.tmdb.org/t/p/w300_and_h450_bestv2' + movieDetail.poster_path" alt="">
+  <mat-card-content>
+    <p>
+      {{ movieDetail.overview }}
+    </p>
+  </mat-card-content>
+</mat-card>
+</div>
